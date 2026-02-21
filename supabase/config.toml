@@ -1,0 +1,6 @@
+# Supabase CLI config - replace project_id when linking to a Supabase project
+# Run: supabase link --project-ref <your-project-ref>
+# project_id = ""
+
+[functions.analyze-role]
+verify_jwt = false

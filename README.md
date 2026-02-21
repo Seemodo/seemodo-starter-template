@@ -50,6 +50,16 @@ npm run dev
 - Click on "New codespace" to launch a new Codespace environment.
 - Edit files directly within the Codespace and commit and push your changes once you're done.
 
+## Supabase (optional)
+
+This template includes Supabase setup: AuthContext, client, types, and a profiles migration.
+
+1. Copy `.env.example` to `.env` and set `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY`.
+2. Run migrations: `npx supabase db push` (after `supabase link --project-ref <ref>`).
+3. Use `useAuth()` from `@/contexts/AuthContext` for auth state.
+
+See `supabase/README.md` for details.
+
 ## What technologies are used for this project?
 
 This project is built with:
@@ -59,6 +69,7 @@ This project is built with:
 - React
 - shadcn-ui
 - Tailwind CSS
+- Supabase (client + Auth)
 
 ## How can I deploy this project?
 
