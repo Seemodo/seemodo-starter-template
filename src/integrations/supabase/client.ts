@@ -5,8 +5,15 @@
 import { createClient } from '@supabase/supabase-js';
 import type { Database } from './types';
 
-const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL?.trim() || 'https://placeholder.supabase.co';
-const SUPABASE_PUBLISHABLE_KEY = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY?.trim() || 'placeholder-key';
+const PLACEHOLDER_URL = 'https://placeholder.supabase.co';
+const PLACEHOLDER_KEY = 'placeholder-key';
+
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL?.trim() || PLACEHOLDER_URL;
+const SUPABASE_PUBLISHABLE_KEY = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY?.trim() || PLACEHOLDER_KEY;
+
+/** True if real Supabase credentials are set in .env (app can use Auth, DB, Storage, Edge Functions). */
+export const isSupabaseConfigured =
+  SUPABASE_URL !== PLACEHOLDER_URL && SUPABASE_PUBLISHABLE_KEY !== PLACEHOLDER_KEY;
 
 export const supabase = createClient<Database>(
   SUPABASE_URL,
